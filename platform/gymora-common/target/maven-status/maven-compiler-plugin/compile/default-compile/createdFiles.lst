@@ -1,0 +1,14 @@
+com\gymora\common\error\GlobalExceptionHandler.class
+com\gymora\common\error\GymoraException.class
+com\gymora\common\persistence\TenantScopedEntity.class
+com\gymora\common\web\LocaleConfig.class
+com\gymora\common\web\PageResponse.class
+com\gymora\common\tenant\TenantIdentifierResolver.class
+com\gymora\common\tenant\TenantContext.class
+com\gymora\common\time\TimeConfig.class
+com\gymora\common\error\NotFoundException.class
+com\gymora\common\persistence\BaseEntity.class
+com\gymora\common\persistence\PersistenceConfig.class
+com\gymora\common\tenant\MissingTenantException.class
+com\gymora\common\error\BusinessRuleException.class
+com\gymora\common\error\GlobalExceptionHandler$FieldViolation.class

@@ -1,0 +1,62 @@
+# Defaults target the local stack in ../infra (docker compose up -d).
+# Override any value with environment variables in other environments, e.g. GYMORA_DB_URL.
+server:
+  port: ${GYMORA_PORT:8090}
+  shutdown: graceful
+
+spring:
+  application:
+    name: gymora
+  datasource:
+    url: ${GYMORA_DB_URL:jdbc:postgresql://localhost:5433/gymora}
+    username: ${GYMORA_DB_USER:gymora}
+    password: ${GYMORA_DB_PASSWORD:gymora}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate          # Flyway owns the schema
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    # Each module keeps its migrations in db/migration/<module>/.
+    # Name them V<yyyyMMddHHmm>__<module>_<what>.sql so versions never collide across modules.
+    locations: classpath:db/migration
+  messages:
+    # One bundle per module; add new modules here.
+    basename: i18n/common,i18n/access
+    fallback-to-system-locale: false
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${GYMORA_ISSUER_URI:http://localhost:8280/realms/gymora}
+          audiences: gymora-api
+
+gymora:
+  time-zone: Africa/Tunis
+  security:
+    cors-allowed-origins:
+      - http://localhost:4200
+  # Keycloak admin API, used to create gym owners and staff accounts (gymora-api service account)
+  keycloak:
+    server-url: ${GYMORA_KEYCLOAK_URL:http://localhost:8280}
+    realm: gymora
+    client-id: gymora-api
+    client-secret: ${GYMORA_KEYCLOAK_SECRET:gymora-api-dev-secret}
+    setup-link-lifespan: 3d
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
