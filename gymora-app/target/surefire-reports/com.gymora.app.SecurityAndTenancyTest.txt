@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.gymora.app.SecurityAndTenancyTest
--------------------------------------------------------------------------------
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.576 s -- in com.gymora.app.SecurityAndTenancyTest
