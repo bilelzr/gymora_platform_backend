@@ -36,6 +36,7 @@
         <module>platform/gymora-security</module>
         <module>platform/gymora-tenant</module>
         <module>platform/gymora-access</module>
+        <module>modules/gymora-membership</module>
         <module>gymora-app</module>
     </modules>
 
@@ -59,6 +60,11 @@
             <dependency>
                 <groupId>com.gymora</groupId>
                 <artifactId>gymora-access</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gymora</groupId>
+                <artifactId>gymora-membership</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

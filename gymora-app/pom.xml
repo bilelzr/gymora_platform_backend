@@ -35,6 +35,10 @@
         </dependency>
 
         <!-- Business modules: add new modules here -->
+        <dependency>
+            <groupId>com.gymora</groupId>
+            <artifactId>gymora-membership</artifactId>
+        </dependency>
 
         <!-- Runtime -->
         <dependency>

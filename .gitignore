@@ -1,0 +1,24 @@
+# Build output
+target/
+*.class
+
+# Maven wrapper download (the wrapper scripts and properties stay versioned)
+.mvn/wrapper/maven-wrapper.jar
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+
+# OS
+.DS_Store
+Thumbs.db

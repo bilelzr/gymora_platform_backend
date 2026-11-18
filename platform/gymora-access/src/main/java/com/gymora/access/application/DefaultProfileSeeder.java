@@ -56,7 +56,8 @@ public class DefaultProfileSeeder {
         }
     }
 
-    Set<String> grantsFor(DefaultProfile template) {
+    /** What a new gym's starting profile gets, merged from every module's contribution. */
+    public Set<String> grantsFor(DefaultProfile template) {
         Set<String> result = new TreeSet<>();
         contributions.forEach(contribution -> result.addAll(contribution.grants().getOrDefault(template, Set.of())));
         return result;
