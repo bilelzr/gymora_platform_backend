@@ -174,7 +174,7 @@ class MembersTest {
                 .contains("membership.member.read", "membership.member.create", "membership.member.update",
                         "membership.note.read", "membership.note.create")
                 .doesNotContain("membership.member.archive");
-        assertThat(seeder.grantsFor(DefaultProfile.TRAINER))
+        assertThat(seeder.grantsFor(DefaultProfile.TRAINER).stream().filter(key -> key.startsWith("membership.")))
                 .containsExactlyInAnyOrder("membership.member.read", "membership.note.read");
         assertThat(seeder.grantsFor(DefaultProfile.MANAGER)).contains("membership.member.archive");
     }

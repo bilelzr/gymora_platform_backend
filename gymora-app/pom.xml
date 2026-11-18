@@ -39,6 +39,10 @@
             <groupId>com.gymora</groupId>
             <artifactId>gymora-membership</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.gymora</groupId>
+            <artifactId>gymora-subscription</artifactId>
+        </dependency>
 
         <!-- Runtime -->
         <dependency>

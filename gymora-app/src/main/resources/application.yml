@@ -25,7 +25,7 @@ spring:
     locations: classpath:db/migration
   messages:
     # One bundle per module; add new modules here.
-    basename: i18n/common,i18n/access,i18n/membership
+    basename: i18n/common,i18n/access,i18n/membership,i18n/subscription
     fallback-to-system-locale: false
   security:
     oauth2:
